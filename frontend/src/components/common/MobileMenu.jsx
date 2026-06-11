@@ -33,34 +33,36 @@ const MobileMenu = ({ isOpen, onClose }) => {
             <div className="flex justify-between items-center mb-10">
               <span className="text-xs font-black uppercase tracking-widest text-amber-500">Menu</span>
               <button onClick={onClose} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors">
-                <X size={20} className="text-gray-900" />
+                <X size={24} className="text-gray-900" />
               </button>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {[
                 { name: "Home", path: "/", icon: Home },
                 { name: "All Snacks", path: "/products", icon: Package },
                 { name: "Wishlist", path: "/wishlist", icon: Heart },
                 { name: "My Cart", path: "/cart", icon: ShoppingBag },
-              ].map((link) => {
-                // Yahan fix kiya hai: Icon component ko capital letter variable mein store kiya
-                const IconComponent = link.icon; 
+              ].map((item) => {
+                const Icon = item.icon;
                 return (
                   <Link
-                    key={link.path}
-                    to={link.path}
+                    key={item.path}
+                    to={item.path}
                     onClick={onClose}
-                    className="flex items-center gap-4 py-4 px-4 rounded-2xl hover:bg-amber-50 text-gray-700 hover:text-amber-600 transition-all font-black uppercase text-xs tracking-wider"
+                    className="flex items-center gap-4 py-4 px-4 rounded-2xl hover:bg-amber-50 text-gray-900 hover:text-amber-600 transition-all font-black uppercase text-xs tracking-wider border border-transparent hover:border-amber-100"
                   >
-                    <IconComponent size={18} />
-                    {link.name}
+                    {/* Icon ko force style diya hai */}
+                    <span className="text-gray-900">
+                      <Icon size={22} strokeWidth={2.5} />
+                    </span>
+                    {item.name}
                   </Link>
                 );
               })}
             </div>
 
-            <div className="mt-auto pt-8 border-t border-gray-50 text-center">
+            <div className="mt-auto pt-8 border-t border-gray-100 text-center">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">CrunchCraft © 2026</p>
             </div>
           </motion.div>
@@ -69,7 +71,6 @@ const MobileMenu = ({ isOpen, onClose }) => {
     </AnimatePresence>
   );
 
-  // Portal fallback: agar 'portal-root' nahi mila toh body mein inject karega
   return createPortal(menuContent, document.getElementById("portal-root") || document.body);
 };
 
