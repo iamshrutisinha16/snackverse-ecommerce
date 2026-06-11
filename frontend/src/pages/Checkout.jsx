@@ -81,7 +81,7 @@ const Checkout = () => {
       };
 
       // 🔌 API Node hit trigger
-      const { data } = await axios.post('http://localhost:5000/api/orders', orderPayload, config);
+      const { data } = await axios.post('https://snackverse-ecommerce.onrender.com/api/orders', orderPayload, config);
       
       console.log("Database Response Data Packet:", data);
 
