@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Spicy Peri Peri Makhana",
+    "slug": "spicy-peri-peri-makhana",
+    "description": "Healthy roasted makhana with premium African peri peri flavor.",
+    "price": 149,
+    "countInStock": 50,
+    "image": "https://placehold.co/300x300.png",
+    "isFeatured": true
+  },
+  {
+    "name": "Diet Baked Potato Chips",
+    "slug": "diet-baked-potato-chips",
+    "description": "0% oil baked crispy potato slice layered with light salt flavor.",
+    "price": 99,
+    "countInStock": 120,
+    "image": "https://placehold.co/300x300.png",
+    "isFeatured": false
+  }
+]

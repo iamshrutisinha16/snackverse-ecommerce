@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  
+  /* BASE BACKGROUND: Rich Luxury Warm Gray/Brown instead of Black */
+  background-color: #171513; 
+
+  /* AURORA LIGHT EFFECTS: Background ke piche orange aur warm light ki waves bna di hain */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.12) 0px, transparent 50%),   /* Top Left Orange Glow */
+    radial-gradient(at 100% 0%, rgba(217, 119, 6, 0.1) 0px, transparent 50%),  /* Top Right Amber Glow */
+    radial-gradient(at 50% 50%, rgba(41, 37, 36, 0.8) 0px, transparent 80%),    /* Center Soft Warm Gray */
+    radial-gradient(at 100% 100%, rgba(251, 146, 60, 0.08) 0px, transparent 40%); /* Bottom Right Glow */
+}
+
+/* Optional: Pura section thoda aur khil kar dikhe isliye glassmorphism tweak */
+.backdrop-blur-md {
+  background-color: rgba(30, 27, 24, 0.7) !important;
+}
