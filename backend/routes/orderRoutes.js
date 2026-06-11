@@ -1,12 +1,8 @@
 import express from 'express';
 const router = express.Router();
-// Apne Order model ko import kar lena yahan
-import Order from '../models/orderModel.js'; 
+import Order from '../models/Order.js'; 
 import { protect } from '../middleware/authMiddleware.js'; // 🔑 Auth checking middleware
 
-// @desc    Create new order
-// @route   POST /api/orders
-// @access  Private (Sirf logged-in users ke liye)
 router.post('/', protect, async (req, res) => {
   try {
     const {
