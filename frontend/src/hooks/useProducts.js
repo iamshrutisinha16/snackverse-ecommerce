@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchProducts, fetchProductById } from '../api/productApi';
+import { fetchProducts, fetchProductById } from '../api/ProductApi';
 
 // 🔥 Yahan dhyan dena: 'export const useProducts' hona bilkul zaroori hai named export ke liye
 export const useProducts = (productId = null) => {
