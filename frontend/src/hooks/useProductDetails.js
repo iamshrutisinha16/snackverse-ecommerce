@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 export const useProductDetails = () => {
-  const { id } = useParams(); // URL se ID catch karega (e.g., /product/6a29a39f...)
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ export const useProductDetails = () => {
       try {
         setLoading(true);
     
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`https://snackverse-ecommerce.onrender.com/api/products/${id}`);
         setProduct(response.data);
       } catch (err) {
         console.error("Error fetching product details stream:", err);
